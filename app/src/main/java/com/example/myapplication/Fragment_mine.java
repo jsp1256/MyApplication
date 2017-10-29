@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +23,10 @@ import android.widget.Toast;
 
 public class Fragment_mine extends Fragment implements View.OnClickListener{
     private TextView tv_1,tv_2,tv_3,tv_4,tv_5,user_name;
+    private LinearLayout personMessage;
     private SharedPreferences sharepf;
     Button btn;
-    ImageButton imagebtn;
+    ImageView imageview;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_mine, container,false);
@@ -32,9 +35,10 @@ public class Fragment_mine extends Fragment implements View.OnClickListener{
         tv_3=view.findViewById(R.id.textview_3);
         tv_4=view.findViewById(R.id.textview_4);
         tv_5=view.findViewById(R.id.textview_5);
+        personMessage=view.findViewById(R.id.message);
         user_name=view.findViewById(R.id.user_name);
         btn=view.findViewById(R.id.exit);
-        imagebtn=view.findViewById(R.id.imagebtn);
+        imageview=view.findViewById(R.id.imagebtn);
         sharepf=getActivity().getSharedPreferences("data",Context.MODE_PRIVATE);
         String name=sharepf.getString("user","unkonwn");
         user_name.setText(name);
@@ -49,7 +53,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener{
         tv_4.setOnClickListener(this);
         tv_5.setOnClickListener(this);
         btn.setOnClickListener(this);
-        imagebtn.setOnClickListener(this);
+        personMessage.setOnClickListener(this);
     }
 
     @Override
@@ -79,10 +83,10 @@ public class Fragment_mine extends Fragment implements View.OnClickListener{
                                SharedPreferences.Editor editer=sharepf.edit();
                                editer.putString("user",null);
                                editer.putString("password",null);
-                               editer.putBoolean("state",false);
+                               editer.putBoolean("autologin",false);
                                editer.commit();
                                MainActivity ma=(MainActivity)getActivity();
-                               ma.state=false;
+                               ma.isLogin=false;
                                ma.setFragment();
                            }
                        })
@@ -92,8 +96,9 @@ public class Fragment_mine extends Fragment implements View.OnClickListener{
                            }
                        }).show();
                break;
-           case R.id.imagebtn:
+           case R.id.message:
                Toast.makeText(getActivity().getApplicationContext(),"设置个人信息",Toast.LENGTH_SHORT).show();
+               break;
        }
     }
 }

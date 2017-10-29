@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,40 +16,58 @@ import android.widget.Toast;
  */
 
 public class LoginActivity extends Activity implements View.OnClickListener{
-    Button btn;
-    EditText user,password;
+    private Button btn;
+    private EditText user,password;
+    private CheckBox autologin;
+    private SharedPreferences.Editor editor;
+    private Boolean isAutologin=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        bindView();
+        btn.setOnClickListener(this);
+        autologin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b) isAutologin=true;
+                else isAutologin=false;
+            }
+        });
+    }
+
+    protected void bindView(){
         btn=findViewById(R.id.button_login);
         user=findViewById(R.id.user);
         password=findViewById(R.id.password);
-        btn.setOnClickListener(this);
+        autologin=findViewById(R.id.autologin);
+        editor=getSharedPreferences("data",MODE_PRIVATE).edit();
+
     }
+
 
     protected void login(String str1,String str2){         //登录功能实现代码
         if(str1.equals("jiangxing")){
             if(str2.equals("123456")){
-                SharedPreferences.Editor editer=getSharedPreferences("data",MODE_PRIVATE).edit();
-                editer.putString("user",str1);
-                editer.putString("password",str2);
-                editer.putBoolean("state",true);
-                editer.commit();
+                if(isAutologin){
+                    editor.putString("user",user.getText().toString());
+                    editor.putString("password",password.getText().toString());
+                    editor.putBoolean("autologin",true);
+                    editor.commit();
+                }
                 Intent intent=new Intent();
                 setResult(RESULT_OK,intent);
                 finish();
             }else
                 Toast.makeText(getApplicationContext(),"密码错误",Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(getApplicationContext(), "用户名不存在", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "用户不存在", Toast.LENGTH_SHORT).show();
             password.setText(null);
             user.requestFocus();
             user.selectAll();
         }
     }
-
 
     @Override
     public void onClick(View view) {
@@ -61,4 +80,5 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         }else
             login(str1,str2);
     }
+
 }

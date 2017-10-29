@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:background="@drawable/bg">
 
-    <View
-        android:id="@+id/unlogin_kongbai_1"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"/>
     <TextView
         android:id="@+id/unlogin_tip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/unlogin_kongbai_1"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:text="您还没有登录！！！"/>
+        android:text="请先登录！！！"/>
     <View
-        android:id="@+id/unlogin_kongbai_2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/unlogin_tip"/>
+        android:layout_height="60dp"/>
     <LinearLayout
-        android:id="@+id/unlogin_ly_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/unlogin_kongbai_2"
         android:gravity="center">
     <TextView
         android:layout_width="90dp"
@@ -43,14 +36,11 @@
         android:text="登录"/>
     </LinearLayout>
     <View
-        android:id="@+id/unlogin_kongbai_3"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/unlogin_ly_1"/>
+        android:layout_height="40dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/unlogin_kongbai_3"
         android:gravity="center">
     <TextView
         android:layout_width="90dp"
@@ -66,4 +56,4 @@
         android:textColor="#FFFFFF"
         android:text="注册"/>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

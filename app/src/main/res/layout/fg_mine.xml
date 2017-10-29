@@ -2,155 +2,81 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@color/whitesmoke">
 
     <LinearLayout
-        android:id="@+id/fg_mine_ly"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
-        <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:gravity="center">
-            <ImageButton
-                android:id="@+id/imagebtn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@mipmap/tab_message_pressed"/>
-        </RelativeLayout>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="80dp"
-            android:background="#C0C0C0"/>
-        <RelativeLayout
-            android:layout_weight="4"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:paddingLeft="5dp">
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:paddingTop="12dp"
-                android:paddingLeft="4dp"
-                android:textSize="16sp"
-                android:text="一叶知秋"/>
-            <TextView
-                android:layout_below="@id/user_name"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:background="@drawable/bg_jianjie"
-                android:hint="个人简介..."/>
-        </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/mine_click_bg"
+        android:clickable="true">
+        <ImageView
+            android:id="@+id/imagebtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"
+            android:clickable="false"/>
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:paddingTop="12dp"
+            android:paddingLeft="4dp"
+            android:textSize="16sp"
+            android:text="一叶知秋"/>
     </LinearLayout>
     <View
-        android:id="@+id/div_1"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_below="@id/fg_mine_ly"/>
-    <View
-        android:id="@+id/div_2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/div_1"
-        android:background="#000000"/>
-    <View
-        android:id="@+id/div_3"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/div_2"/>
+        android:layout_height="40dp"/>
         <TextView
+            style="@style/setting_textView"
             android:id="@+id/textview_1"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/div_3"
-            android:paddingLeft="10dp"
-            android:textSize="12sp"
             android:drawableLeft="@mipmap/tab_better_pressed"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical|left"
-            android:clickable="true"
-            android:background="@drawable/mine_click_bg"
             android:text="我的收藏"/>
     <View
-        android:id="@+id/kongbai_1"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:layout_below="@id/textview_1"/>
+        android:layout_height="15dp"/>
         <TextView
+            style="@style/setting_textView"
             android:id="@+id/textview_2"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/kongbai_1"
-            android:paddingLeft="10dp"
-            android:textSize="12sp"
             android:drawableLeft="@mipmap/tab_channel_pressed"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical|left"
-            android:clickable="true"
-            android:background="@drawable/mine_click_bg"
             android:text="美食相册"/>
     <View
-        android:id="@+id/kongbai_2"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:layout_below="@id/textview_2"/>
+        android:layout_height="15dp"/>
         <TextView
+            style="@style/setting_textView"
             android:id="@+id/textview_3"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/kongbai_2"
-            android:paddingLeft="10dp"
-            android:textSize="12sp"
             android:drawableLeft="@mipmap/tab_message_pressed"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical|left"
-            android:clickable="true"
-            android:background="@drawable/mine_click_bg"
             android:text="我的团约"/>
     <View
-        android:id="@+id/kongbai_3"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:layout_below="@id/textview_3"/>
+        android:layout_height="15dp"/>
         <TextView
+            style="@style/setting_textView"
             android:id="@+id/textview_4"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/kongbai_3"
-            android:paddingLeft="10dp"
-            android:textSize="12sp"
             android:drawableLeft="@mipmap/tab_my_pressed"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical|start"
-            android:clickable="true"
-            android:background="@drawable/mine_click_bg"
             android:text="我的轨迹"/>
     <View
-        android:id="@+id/kongbai_4"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:layout_below="@id/textview_4"/>
+        android:layout_height="15dp"/>
         <TextView
+            style="@style/setting_textView"
             android:id="@+id/textview_5"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/kongbai_4"
-            android:paddingLeft="10dp"
-            android:textSize="12sp"
             android:drawableLeft="@mipmap/tab_better_pressed"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical|left"
-            android:clickable="true"
-            android:background="@drawable/mine_click_bg"
             android:text="设置"/>
+    </LinearLayout>
     <Button
         android:id="@+id/exit"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-       android:layout_alignParentBottom="true"
         android:background="#FF0000"
+        android:layout_alignParentBottom="true"
         android:textSize="16sp"
         android:textColor="#FCFCFC"
         android:text="退出登录"/>

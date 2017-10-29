@@ -10,4 +10,32 @@
         <item name="android:shadowDx">3.0</item>
         <item name="android:shadowDy">3.0</item>
     </style>
+    <style name="register_ly">
+        <item name="android:background">@color/snow</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="register_textview">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="register_edittext">
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColorHint">@color/lavender</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="setting_textView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/mine_click_bg</item>
+    </style>
 </resources>

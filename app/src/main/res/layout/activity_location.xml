@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gainsboro"
+    tools:context="com.example.myapplication.LocationActivity">
+
+    <TextView
+        android:id="@+id/location_now"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:paddingTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:background="@color/white">
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:hint="输入地址"
+            android:textColorHint="@color/silver"/>
+    </LinearLayout>
+
+</LinearLayout>
