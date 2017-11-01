@@ -16,13 +16,13 @@
             android:paddingLeft="5dp"
             android:clickable="true">
         <TextView
+            android:id="@+id/locationString"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:textSize="16sp"
             android:gravity="center"
             android:singleLine="true"
-            android:ellipsize="end"
-            android:text="堕落街"/>
+            android:ellipsize="end"/>
             <View
                 android:layout_width="5dp"
                 android:layout_height="35dp"/>

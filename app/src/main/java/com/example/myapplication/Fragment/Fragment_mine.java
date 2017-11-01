@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Fragment;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -16,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapplication.MainActivity;
+import com.example.myapplication.R;
 
 /**
  * Created by 蒋星 on 2017/9/7.

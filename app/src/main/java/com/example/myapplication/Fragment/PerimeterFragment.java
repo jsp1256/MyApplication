@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.example.myapplication.R;
 
 /**
  * Created by Administrator on 2017/8/14.

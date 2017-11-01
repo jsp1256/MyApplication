@@ -12,6 +12,11 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Fragment.Fragment_homepage;
+import com.example.myapplication.Fragment.Fragment_mine;
+import com.example.myapplication.Fragment.Fragment_unlogin;
+import com.example.myapplication.Fragment.PerimeterFragment;
+
 
 /**
  * changed in2017.9.6
@@ -31,7 +36,7 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
     private FragmentManager fManager;
 
     private static boolean isExit=false;  //确定是否退出程序的标识变量
-    protected static boolean isLogin=false;  //确定当前登录
+    public static boolean isLogin=false;  //确定当前登录
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +53,11 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
     @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
         if(resultCode==RESULT_OK) {
-            isLogin=true;
-            setSelected();
-            txt_setting.setSelected(true);
-            fg4 = new Fragment_mine();
-            fManager.beginTransaction().add(R.id.ly_content, fg4).commit();
+            autoLogin();
         }
     }
 
-    protected void autoLogin(){
+    public void autoLogin(){
         isLogin=true;
         setSelected();
         txt_setting.setSelected(true);
