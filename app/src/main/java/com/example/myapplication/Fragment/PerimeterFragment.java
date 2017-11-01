@@ -45,6 +45,7 @@ public class PerimeterFragment extends Fragment {
     private AMapLocationClient aMapLocationClient = null;
     private AMapLocationClientOption aMapLocationClientOption = null;
     private AMapLocationListener aMapLocationListener = new AMapLocationListener() {
+        @Override
         public void onLocationChanged(AMapLocation location) {
             if (null != location) {
                 StringBuffer sb = new StringBuffer();
@@ -89,16 +90,10 @@ public class PerimeterFragment extends Fragment {
 
         mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
-        //地图模块初始化
-        initAmap();
-        //poi搜索模块初始化
 
+        initAmap();
 
         return view;
-    }
-
-    private  void initpoi(){
-
     }
 
     private void initAmap() {

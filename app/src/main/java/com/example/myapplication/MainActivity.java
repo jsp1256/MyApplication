@@ -35,8 +35,9 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
     private Fragment_mine fg4;
     private FragmentManager fManager;
 
-    private static boolean isExit=false;  //确定是否退出程序的标识变量
-    public static boolean isLogin=false;  //确定当前登录
+    //确定是否退出程序的标识变量
+    private static boolean isExit=false;
+    public static boolean isLogin=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

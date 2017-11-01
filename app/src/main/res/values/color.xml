@@ -151,7 +151,4 @@
     <color name="darkblue">#00008B</color><!--暗蓝色 -->
     <color name="navy">#000080</color><!--海军色 -->
     <color name="black">#000000</color><!--黑色 -->
-
-    <!--高德地图移植 -->
-    <color name="gary">#898989</color>
 </resources>

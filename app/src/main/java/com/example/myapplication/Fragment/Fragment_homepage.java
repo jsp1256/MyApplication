@@ -27,21 +27,18 @@ import java.util.LinkedList;
  */
 
 public class Fragment_homepage extends Fragment implements View.OnClickListener{
-    TextView tv_1,locationString;
+    TextView tv_1,Location;
     LinearLayout location,food_search,foodlist;
     LinkedList<Food> mData;
-    String Str;//地理位置字符串
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
        View view=inflater.inflate(R.layout.fg_homepage,container,false);
         tv_1=(TextView) view.findViewById(R.id.foodcommend);  //关联控件
-        locationString=(TextView)view.findViewById(R.id.locationString);
+        Location=view.findViewById(R.id.Location);
         location=(LinearLayout)view.findViewById(R.id.location);
         food_search=(LinearLayout)view.findViewById(R.id.food_search);
         foodlist=(LinearLayout)view.findViewById(R.id.foodlist);
         init();
-        locationString.setText(Str);
         setListener();
         addFoodList(mData);
         return view;
@@ -53,9 +50,10 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener{
         mData.add(new Food("酸菜鱼",70.0,94.0,R.mipmap.ic_launcher));
         mData.add(new Food("辣子鸡",80.0,90.0,R.mipmap.ic_launcher));
         mData.add(new Food("东北麻辣烫",40.0,89.0,R.mipmap.ic_launcher));
-        //调用定位功能模块获取当前地理位置信息
+        //首页自动定位代码块
         {
-            Str="堕落街";
+            String str="后街";
+            Location.setText(str);
         }
     }
 
