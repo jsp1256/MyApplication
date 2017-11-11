@@ -68,63 +68,98 @@
     <LinearLayout
         android:id="@+id/homepage_ly_1"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="小吃"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="火锅"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="烧烤"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="夜宵"/>
+        android:layout_height="80dp">
+        <LinearLayout
+            style="@style/homepage_ly_1">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/drink"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingTop="3dp"
+                android:text="饮料"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/homepage_ly_1">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/drink"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingTop="3dp"
+                android:text="饮料"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/homepage_ly_1">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/drink"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingTop="3dp"
+                android:text="饮料"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/homepage_ly_1">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/drink"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingTop="3dp"
+                android:text="饮料"/>
+        </LinearLayout>
     </LinearLayout>
     <View
         android:id="@+id/div_2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"/>
+        android:layout_height="100dp"
+        android:gravity="center">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/foodcommend"
-                android:drawableTop="@mipmap/ic_launcher"
-                style="@style/homepage"
-                android:text="美食榜"/>
-            <View
-                android:layout_width="0.1dp"
+            android:id="@+id/foodcommend"
+            style="@style/homepage_ly_1">
+            <ImageView
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@color/black"/>
+                android:src="@mipmap/drink"/>
             <TextView
-                android:id="@+id/homepage_title1"
-                android:drawableTop="@mipmap/ic_launcher"
-                style="@style/homepage"
-                android:text="店铺榜"/>
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingTop="3dp"
+                android:text="美食榜"/>
         </LinearLayout>
         <View
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-        <TextView
+            android:layout_width="0.1dp"
+            android:layout_height="50dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            style="@style/homepage_ly_1">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/drink"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingTop="3dp"
+                android:text="店铺榜"/>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:gravity="center"

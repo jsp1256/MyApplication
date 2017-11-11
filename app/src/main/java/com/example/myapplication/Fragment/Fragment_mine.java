@@ -2,7 +2,6 @@ package com.example.myapplication.Fragment;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -11,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -80,6 +78,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener{
            case R.id.exit:           //“退出”按钮功能实现
                new AlertDialog.Builder(getActivity()).setTitle("提示")
                        .setMessage("确认退出？")
+                       //“确认退出”按钮功能实现
                        .setPositiveButton("确认", new DialogInterface.OnClickListener() {
                            @Override
                            public void onClick(DialogInterface dialogInterface, int i) {
@@ -93,6 +92,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener{
                                ma.setFragment();
                            }
                        })
+                       //“取消退出”按钮功能实现
                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                            @Override
                            public void onClick(DialogInterface dialogInterface, int i) {

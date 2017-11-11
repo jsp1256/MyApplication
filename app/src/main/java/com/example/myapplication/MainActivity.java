@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.example.myapplication.Fragment.Fragment_homepage;
 import com.example.myapplication.Fragment.Fragment_mine;
 import com.example.myapplication.Fragment.Fragment_unlogin;
-import com.example.myapplication.Fragment.PerimeterFragment;
+import com.example.myapplication.Fragment.Fragment_perimeter;
 
 
 /**
@@ -24,13 +24,13 @@ import com.example.myapplication.Fragment.PerimeterFragment;
 public class MainActivity extends CheckPermissionsActivity implements View.OnClickListener{
 
     //UI Object
-    protected TextView txt_channel;
-    protected TextView txt_message;
-    protected TextView txt_setting;
+    protected TextView txt_homepage;
+    protected TextView txt_perimeter;
+    protected TextView txt_user;
 
     //Fragment Object
     private Fragment_homepage fg1;
-    private PerimeterFragment fg2;
+    private Fragment_perimeter fg2;
     private Fragment_unlogin fg3;
     private Fragment_mine fg4;
     private FragmentManager fManager;
@@ -46,7 +46,7 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
         setContentView(R.layout.activity_main);
         fManager = getFragmentManager();
         bindViews();
-        txt_channel.performClick();   //模拟一次点击，既进去后选择第一项
+        txt_homepage.performClick();   //模拟一次点击，既进去后选择第一项
     }
 
 
@@ -61,28 +61,32 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
     public void autoLogin(){
         isLogin=true;
         setSelected();
-        txt_setting.setSelected(true);
+        txt_user.setSelected(true);
         fg4 = new Fragment_mine();
         fManager.beginTransaction().add(R.id.ly_content, fg4).commit();
     }
 
     //UI组件初始化与事件绑定
     private void bindViews() {
-        txt_channel = (TextView) findViewById(R.id.txt_channel);
-        txt_message = (TextView) findViewById(R.id.txt_message);
-        txt_setting = (TextView) findViewById(R.id.txt_setting);
+        txt_homepage = (TextView) findViewById(R.id.txt_homepage);
+        txt_perimeter = (TextView) findViewById(R.id.txt_perimeter);
+        txt_user = (TextView) findViewById(R.id.txt_user);
+
+        //启动时初始化周边模块
+        fg2=new Fragment_perimeter();
+        fManager.beginTransaction().add(R.id.ly_content,fg2).commit();
 
         //为底部控件设置监听器
-        txt_channel.setOnClickListener(this);
-        txt_message.setOnClickListener(this);
-        txt_setting.setOnClickListener(this);
+        txt_homepage.setOnClickListener(this);
+        txt_perimeter.setOnClickListener(this);
+        txt_user.setOnClickListener(this);
     }
 
     //重置所有文本的选中状态
     protected void setSelected(){
-        txt_channel.setSelected(false);
-        txt_message.setSelected(false);
-        txt_setting.setSelected(false);
+        txt_homepage.setSelected(false);
+        txt_perimeter.setSelected(false);
+        txt_user.setSelected(false);
     }
 
     //隐藏所有Fragment
@@ -95,7 +99,7 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
 
     //模拟一次点击
     public void setFragment(){
-        txt_setting.performClick();
+        txt_user.performClick();
     }
 
     //通过handler修改标识变量
@@ -130,8 +134,8 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
         hideAllFragment(fTransaction);
         setSelected();
         switch (v.getId()) {
-            case R.id.txt_channel:
-                txt_channel.setSelected(true);
+            case R.id.txt_homepage:
+                txt_homepage.setSelected(true);
                 if (fg1 == null) {
                     fg1 = new Fragment_homepage();
                     fTransaction.add(R.id.ly_content, fg1);
@@ -139,17 +143,12 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
                     fTransaction.show(fg1);
                 }
                 break;
-            case R.id.txt_message:
-                txt_message.setSelected(true);
-                if (fg2 == null) {
-                    fg2 = new PerimeterFragment();
-                    fTransaction.add(R.id.ly_content, fg2);
-                } else {
-                    fTransaction.show(fg2);
-                }
+            case R.id.txt_perimeter:
+                txt_perimeter.setSelected(true);
+                fTransaction.show(fg2);
                 break;
-            case R.id.txt_setting:
-                txt_setting.setSelected(true);
+            case R.id.txt_user:
+                txt_user.setSelected(true);
                 if(isLogin){
                     fTransaction.show(fg4);
                 }else {

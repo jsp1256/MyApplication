@@ -21,7 +21,7 @@ import com.example.myapplication.R;
  */
 
 @SuppressWarnings("DefaultFileTemplate")
-public class PerimeterFragment extends Fragment {
+public class Fragment_perimeter extends Fragment {
     private AMap aMap = null;
     private MapView mapView = null;
 /*
