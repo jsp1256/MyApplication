@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity implements View.OnClickListener{
     private Button btn;
+    private TextView forget;
     private EditText user,password;
     private CheckBox autologin;
     private SharedPreferences.Editor editor;
@@ -30,6 +31,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         bindView();
+        String str="<a href='http://www.baidu.com'>忘记密码?</a>";
+        forget.setMovementMethod(LinkMovementMethod.getInstance());
+        forget.setText(Html.fromHtml(str));
         btn.setOnClickListener(this);
         autologin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -42,6 +46,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
 
     protected void bindView(){
         btn=findViewById(R.id.button_login);
+        forget=(TextView)findViewById(R.id.login_forget);
         user=findViewById(R.id.user);
         password=findViewById(R.id.password);
         autologin=findViewById(R.id.autologin);
