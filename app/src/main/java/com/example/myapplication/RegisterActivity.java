@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -24,11 +23,11 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     }
 
     private void bindViews(){
-        user=findViewById(R.id.register_user);
-        password=findViewById(R.id.register_password);
-        repassword=findViewById(R.id.register_repassword);
-        tele=findViewById(R.id.register_tele);
-        btn_register=findViewById(R.id.register_button);
+        user=findViewById(R.id.et_username);
+        password=findViewById(R.id.et_password);
+        repassword=findViewById(R.id.et_password_confirm);
+        tele=findViewById(R.id.et_phone_num);
+        btn_register=findViewById(R.id.bt_register);
     }
 
     @Override

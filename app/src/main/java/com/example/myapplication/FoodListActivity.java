@@ -24,7 +24,7 @@ public class FoodListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodlist);
-        foodlist=(ListView)findViewById(R.id.FoodList);  //关联控件
+        foodlist=(ListView)findViewById(R.id.ll_main_fg_present_recommend);  //关联控件
         init();
         mAdapter=new myAdapter();
         foodlist.setAdapter(mAdapter);  //为ListView绑定适配器

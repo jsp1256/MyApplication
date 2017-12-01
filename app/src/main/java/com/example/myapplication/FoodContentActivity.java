@@ -14,7 +14,7 @@ public class FoodContentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_content);
         Intent intent=getIntent();
         String name=intent.getStringExtra("name");
-        food_title=(TextView)findViewById(R.id.food_title);
+        food_title=(TextView)findViewById(R.id.tv_foodtitle);
         food_title.setText(name);
     }
 }

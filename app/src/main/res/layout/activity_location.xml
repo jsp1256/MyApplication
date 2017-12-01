@@ -9,7 +9,7 @@
     tools:context="com.example.myapplication.LocationActivity">
 
     <TextView
-        android:id="@+id/location_now"
+        android:id="@+id/tv_location_now"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textSize="16sp"
@@ -25,7 +25,7 @@
             android:layout_width="200dp"
             android:layout_height="30dp"
             android:background="@null"
-            android:hint="输入地址"
+            android:hint="@string/location_input_hint"
             android:textColorHint="@color/silver"/>
     </LinearLayout>
 

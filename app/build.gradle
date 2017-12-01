@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'key0'
             keyPassword '123456'
-            storeFile file('D:/Fooder/Test.jks')
+            storeFile file('D:/Android-ide/key/Test.jks')
             storePassword '123456'
         }
     }
