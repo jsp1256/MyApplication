@@ -111,7 +111,7 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
         if (fg_mine != null) fragmentTransaction.hide(fg_mine);
     }
 
-    //模拟一次点击
+    //初始化默认点击主界面——我的碎片模块控件
     public void setFragment() {
         tv_main_menu_mine.performClick();
     }
@@ -145,6 +145,7 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
+        //初始化碎片管理者
         FragmentTransaction fTransaction = fg_manager.beginTransaction();
         hideAllFragment(fTransaction);
         setSelected();
