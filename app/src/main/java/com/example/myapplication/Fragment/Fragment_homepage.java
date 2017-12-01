@@ -5,7 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Layout;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +26,6 @@ import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.support.v4.view.*;
-
 /**
  * Created by 蒋星 on 2017/10/6.
  */
@@ -45,7 +44,7 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
     //设置线性布局的背景图片的资源ID数组
     private int[] imagesrc={R.drawable.food,R.mipmap.drink,R.mipmap.ic_launcher,R.drawable.food,R.mipmap.drink};
     //设置指针的资源ID数组
-    private int[] dotsrc={R.id.dot_1,R.id.dot_2,R.id.dot_3,R.id.dot_4,R.id.dot_5};
+    private int[] dotsrc={R.id.v_main_fg_cursor1,R.id.v_main_fg_cursor2,R.id.v_main_fg_cursor3,R.id.v_main_fg_cursor4,R.id.v_main_fg_cursor5};
 
     private Handler myHandler=new Handler(){
         @Override
@@ -77,12 +76,12 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
     }
 
     protected void initView(View view){
-        tv_1=(LinearLayout) view.findViewById(R.id.foodcommend);  //关联控件
-        Location=view.findViewById(R.id.Location);
-        location=(LinearLayout)view.findViewById(R.id.location);
-        food_search=(LinearLayout)view.findViewById(R.id.food_search);
-        foodlist=(LinearLayout)view.findViewById(R.id.foodlist);
-        viewpager=(ViewPager)view.findViewById(R.id.viewpager);
+        tv_1=(LinearLayout) view.findViewById(R.id.ll_main_fg_food_ranking_list);  //关联控件
+        Location=view.findViewById(R.id.tv_main_fg_location_search);
+        location=(LinearLayout)view.findViewById(R.id.ll_main_fg_location_search);
+        food_search=(LinearLayout)view.findViewById(R.id.ll_main_fg_food_search);
+        foodlist=(LinearLayout)view.findViewById(R.id.ll_main_fg_present_recommend);
+        viewpager=(ViewPager)view.findViewById(R.id.fl_main_fg_viewpager);
         viewlist = new ArrayList<View>();
         dotlist = new ArrayList<View>();
         LayoutInflater li = getActivity().getLayoutInflater();
@@ -171,15 +170,15 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()){
-            case R.id.foodcommend:
+            case R.id.ll_main_fg_food_ranking_list:
                 intent=new Intent(getActivity(),FoodListActivity.class);
                 getActivity().startActivity(intent);
                 break;
-            case R.id.location:
+            case R.id.ll_main_fg_location_search:
                 intent=new Intent(getActivity(),LocationActivity.class);
                 getActivity().startActivity(intent);
                 break;
-            case R.id.food_search:
+            case R.id.ll_main_fg_food_search:
                 intent=new Intent(getActivity(),SearchActivity.class);
                 getActivity().startActivity(intent);
                 break;

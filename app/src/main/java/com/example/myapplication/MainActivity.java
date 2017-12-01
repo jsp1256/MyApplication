@@ -21,85 +21,99 @@ import com.example.myapplication.Fragment.Fragment_perimeter;
 /**
  * changed in2017.9.6
  */
-public class MainActivity extends CheckPermissionsActivity implements View.OnClickListener{
+public class MainActivity extends CheckPermissionsActivity implements View.OnClickListener {
 
     //UI Object
-    protected TextView txt_homepage;
-    protected TextView txt_perimeter;
-    protected TextView txt_user;
+    protected TextView tv_main_menu_homepage;   //定义主界面——菜单——主页TextView控件
+    protected TextView tv_main_menu_perimeter;  //定义主界面——菜单——周边TextView控件
+    protected TextView tv_main_menu_mine;       //定义主界面——菜单——我的TextView控件
 
     //Fragment Object
-    private Fragment_homepage fg1;
-    private Fragment_perimeter fg2;
-    private Fragment_unlogin fg3;
-    private Fragment_mine fg4;
-    private FragmentManager fManager;
+    private Fragment_homepage fg_homepage;      //定义Fragment主界面——主页碎片模块
+    private Fragment_perimeter fg_perimeter;    //定义Fragment主界面——周边碎片模块
+    private Fragment_unlogin fg_unlogin;        //定义Fragment主界面——未登录碎片模块
+    private Fragment_mine fg_mine;              //定义Fragment主界面——我的碎片模块
+    private FragmentManager fg_manager;         //定义Fragment主界面——管理碎片模块
 
     //确定是否退出程序的标识变量
-    private static boolean isExit=false;
-    public static boolean isLogin=false;
+    private static boolean isExit = false;
+    public static boolean isLogin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //去掉程序左上角的标题
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        fManager = getFragmentManager();
-        bindViews();
-        txt_homepage.performClick();   //模拟一次点击，既进去后选择第一项
+        fg_manager = getFragmentManager();
+
+        //实例化相关的控件与碎片模块
+        init();
+
+        //初始化第一次进入程序后，默认点击主界面——主页碎片模块控件
+        tv_main_menu_homepage.performClick();
     }
 
 
     //对登录界面的返回结果进行处理
     @Override
-    protected void onActivityResult(int requestCode,int resultCode,Intent data){
-        if(resultCode==RESULT_OK) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+
+            //自动登录个人信息功能
             autoLogin();
         }
     }
 
-    public void autoLogin(){
-        isLogin=true;
+    //自动登录个人信息方法
+    public void autoLogin() {
+        isLogin = true;
+
+        //重置所有主界面碎片模块不被点击
         setSelected();
-        txt_user.setSelected(true);
-        fg4 = new Fragment_mine();
-        fManager.beginTransaction().add(R.id.ly_content, fg4).commit();
+
+        //主界面——我的碎片模块被点击并显示
+        tv_main_menu_mine.setSelected(true);
+        fg_mine = new Fragment_mine();
+        fg_manager.beginTransaction().add(R.id.fl_main_content, fg_mine).commit();
     }
 
     //UI组件初始化与事件绑定
-    private void bindViews() {
-        txt_homepage = (TextView) findViewById(R.id.txt_homepage);
-        txt_perimeter = (TextView) findViewById(R.id.txt_perimeter);
-        txt_user = (TextView) findViewById(R.id.txt_user);
-
-        //启动时初始化周边模块
-        fg2=new Fragment_perimeter();
-        fManager.beginTransaction().add(R.id.ly_content,fg2).commit();
+    private void init() {
+        tv_main_menu_homepage = (TextView) findViewById(R.id.tv_main_menu_homepage);
+        tv_main_menu_perimeter = (TextView) findViewById(R.id.tv_main_menu_perimeter);
+        tv_main_menu_mine = (TextView) findViewById(R.id.tv_main_menu_mine);
 
         //为底部控件设置监听器
-        txt_homepage.setOnClickListener(this);
-        txt_perimeter.setOnClickListener(this);
-        txt_user.setOnClickListener(this);
+        tv_main_menu_homepage.setOnClickListener(this);
+        tv_main_menu_perimeter.setOnClickListener(this);
+        tv_main_menu_mine.setOnClickListener(this);
+
+        //启动时初始化周边模块
+        fg_perimeter = new Fragment_perimeter();
+        fg_manager.beginTransaction().add(R.id.fl_main_content, fg_perimeter).commit();
+
     }
 
-    //重置所有文本的选中状态
-    protected void setSelected(){
-        txt_homepage.setSelected(false);
-        txt_perimeter.setSelected(false);
-        txt_user.setSelected(false);
+    //重置所有主界面碎片模块的选中状态
+    protected void setSelected() {
+        tv_main_menu_homepage.setSelected(false);
+        tv_main_menu_perimeter.setSelected(false);
+        tv_main_menu_mine.setSelected(false);
     }
 
-    //隐藏所有Fragment
-    protected void hideAllFragment(FragmentTransaction fragmentTransaction){
-        if(fg1 != null)fragmentTransaction.hide(fg1);
-        if(fg2 != null)fragmentTransaction.hide(fg2);
-        if(fg3 != null)fragmentTransaction.hide(fg3);
-        if(fg4 != null)fragmentTransaction.hide(fg4);
+    //隐藏所有主界面碎片模块
+    protected void hideAllFragment(FragmentTransaction fragmentTransaction) {
+        if (fg_homepage != null) fragmentTransaction.hide(fg_homepage);
+        if (fg_perimeter != null) fragmentTransaction.hide(fg_perimeter);
+        if (fg_unlogin != null) fragmentTransaction.hide(fg_unlogin);
+        if (fg_mine != null) fragmentTransaction.hide(fg_mine);
     }
 
     //模拟一次点击
-    public void setFragment(){
-        txt_user.performClick();
+    public void setFragment() {
+        tv_main_menu_mine.performClick();
     }
 
     //通过handler修改标识变量
@@ -126,40 +140,41 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
             }
             return false;
         }
-        return super.onKeyDown(keyCode, event);}
+        return super.onKeyDown(keyCode, event);
+    }
 
     @Override
     public void onClick(View v) {
-        FragmentTransaction fTransaction = fManager.beginTransaction();
+        FragmentTransaction fTransaction = fg_manager.beginTransaction();
         hideAllFragment(fTransaction);
         setSelected();
         switch (v.getId()) {
-            case R.id.txt_homepage:
-                txt_homepage.setSelected(true);
-                if (fg1 == null) {
-                    fg1 = new Fragment_homepage();
-                    fTransaction.add(R.id.ly_content, fg1);
+            case R.id.tv_main_menu_homepage:
+                tv_main_menu_homepage.setSelected(true);
+                if (fg_homepage == null) {
+                    fg_homepage = new Fragment_homepage();
+                    fTransaction.add(R.id.fl_main_content, fg_homepage);
                 } else {
-                    fTransaction.show(fg1);
+                    fTransaction.show(fg_homepage);
                 }
                 break;
-            case R.id.txt_perimeter:
-                txt_perimeter.setSelected(true);
-                fTransaction.show(fg2);
+            case R.id.tv_main_menu_perimeter:
+                tv_main_menu_perimeter.setSelected(true);
+                fTransaction.show(fg_perimeter);
                 break;
-            case R.id.txt_user:
-                txt_user.setSelected(true);
-                if(isLogin){
-                    fTransaction.show(fg4);
-                }else {
-                    if (fg3 == null) {
-                        fg3 = new Fragment_unlogin();
-                        fTransaction.add(R.id.ly_content, fg3);
+            case R.id.tv_main_menu_mine:
+                tv_main_menu_mine.setSelected(true);
+                if (isLogin) {
+                    fTransaction.show(fg_mine);
+                } else {
+                    if (fg_unlogin == null) {
+                        fg_unlogin = new Fragment_unlogin();
+                        fTransaction.add(R.id.fl_main_content, fg_unlogin);
                     } else
-                        fTransaction.show(fg3);
+                        fTransaction.show(fg_unlogin);
                 }
                 break;
         }
-            fTransaction.commit();
-        }
+        fTransaction.commit();
+    }
 }

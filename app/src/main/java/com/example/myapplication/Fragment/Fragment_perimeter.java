@@ -88,7 +88,7 @@ public class Fragment_perimeter extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.perimeter_fragment_main_layout, container, false);
 
-        mapView = view.findViewById(R.id.map);
+        mapView = view.findViewById(R.id.fg_perimeter_map);
         mapView.onCreate(savedInstanceState);
 
         initAmap();

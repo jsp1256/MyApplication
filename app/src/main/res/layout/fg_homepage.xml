@@ -10,7 +10,7 @@
         android:layout_height="30dp">
 
         <LinearLayout
-            android:id="@+id/location"
+            android:id="@+id/ll_main_fg_location_search"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
@@ -18,7 +18,7 @@
             android:paddingLeft="5dp">
 
             <TextView
-                android:id="@+id/Location"
+                android:id="@+id/tv_main_fg_location_search"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:ellipsize="end"
@@ -37,7 +37,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/food_search"
+            android:id="@+id/ll_main_fg_food_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -54,7 +54,7 @@
                 android:layout_height="35dp"
                 android:background="@null"
                 android:gravity="center_vertical"
-                android:hint=" 搜索美食"
+                android:hint="@string/food_input_hint"
                 android:paddingBottom="5dp"
                 android:textColorHint="@color/silver"
                 android:textSize="18sp" />
@@ -75,7 +75,7 @@
                 android:layout_height="200dp">
 
                 <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager"
+                    android:id="@+id/fl_main_fg_viewpager"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />
 
@@ -88,50 +88,50 @@
                     android:background="@drawable/homepage_cursor_bg">
 
                     <LinearLayout
-                        style="@style/homepage_cursor">
+                        style="@style/style_ll_main_fg_cursor">
 
                         <View
-                            android:id="@+id/dot_1"
+                            android:id="@+id/v_main_fg_cursor1"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_focused" />
                     </LinearLayout>
 
                     <LinearLayout
-                        style="@style/homepage_cursor">
+                        style="@style/style_ll_main_fg_cursor">
 
                         <View
-                            android:id="@+id/dot_2"
+                            android:id="@+id/v_main_fg_cursor2"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
                     </LinearLayout>
 
                     <LinearLayout
-                        style="@style/homepage_cursor">
+                        style="@style/style_ll_main_fg_cursor">
 
                         <View
-                            android:id="@+id/dot_3"
+                            android:id="@+id/v_main_fg_cursor3"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
                     </LinearLayout>
 
                     <LinearLayout
-                        style="@style/homepage_cursor">
+                        style="@style/style_ll_main_fg_cursor">
 
                         <View
-                            android:id="@+id/dot_4"
+                            android:id="@+id/v_main_fg_cursor4"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
                     </LinearLayout>
 
                     <LinearLayout
-                        style="@style/homepage_cursor">
+                        style="@style/style_ll_main_fg_cursor">
 
                         <View
-                            android:id="@+id/dot_5"
+                            android:id="@+id/v_main_fg_cursor5"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
@@ -145,11 +145,11 @@
                 android:background="@color/gainsboro" />
 
             <LinearLayout
-                android:id="@+id/homepage_ly_1"
+                android:id="@+id/ll_main_fg_recommend1"
                 android:layout_width="match_parent"
                 android:layout_height="80dp">
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -160,10 +160,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:paddingTop="3dp"
-                        android:text="小吃" />
+                        android:text="@string/drink" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -174,10 +174,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:paddingTop="3dp"
-                        android:text="烧烤" />
+                        android:text="@string/drink" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -188,10 +188,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:paddingTop="3dp"
-                        android:text="夜宵" />
+                        android:text="@string/drink" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -202,12 +202,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:paddingTop="3dp"
-                        android:text="水饮" />
+                        android:text="@string/drink" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
-                android:id="@+id/div_2"
+                android:id="@+id/v_main_fg_div1"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp" />
 
@@ -217,8 +217,8 @@
                 android:gravity="center">
 
                 <LinearLayout
-                    android:id="@+id/foodcommend"
-                    style="@style/homepage_ly_1">
+                    android:id="@+id/ll_main_fg_food_ranking_list"
+                    style="@style/style_ll_main_fg_recommend">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -229,7 +229,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:paddingTop="3dp"
-                        android:text="美食榜" />
+                        android:text="@string/main_fg_food_ranking_list" />
                 </LinearLayout>
 
                 <View
@@ -237,7 +237,7 @@
                     android:layout_height="50dp"
                     android:background="@color/black" />
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -248,7 +248,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:paddingTop="3dp"
-                        android:text="店铺榜" />
+                        android:text="@string/main_fg_store_ranking_list" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -261,12 +261,12 @@
                 android:layout_height="30dp"
                 android:background="@color/powderblue"
                 android:gravity="center"
-                android:text="今日推荐"
+                android:text="@string/main_fg_present_recommend"
                 android:textColor="@color/red"
                 android:textSize="18sp" />
 
             <LinearLayout
-                android:id="@+id/foodlist"
+                android:id="@+id/ll_main_fg_present_recommend"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"></LinearLayout>

@@ -10,25 +10,25 @@
         <item name="android:shadowDx">3.0</item>
         <item name="android:shadowDy">3.0</item>
     </style>
-    <style name="register_ly">
+    <style name="style_ll_username">
         <item name="android:background">@color/snow</item>
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="register_textview">
+    <style name="style_tv_username">
         <item name="android:layout_width">80dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:gravity">center_vertical</item>
     </style>
-    <style name="register_edittext">
+    <style name="style_et_username">
         <item name="android:layout_width">220dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:textColorHint">@color/lavender</item>
         <item name="android:background">@null</item>
     </style>
-    <style name="setting_textView">
+    <style name="style_mine_table">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:paddingLeft">10dp</item>
@@ -38,15 +38,14 @@
         <item name="android:clickable">true</item>
         <item name="android:background">@drawable/mine_click_bg</item>
     </style>
-    <style name="homepage_ly_1">
+    <style name="style_ll_main_fg_recommend">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">80dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
         <item name="android:orientation">vertical</item>
     </style>
-    <style name="homepage_cursor">
-        <item name="android:layout_width">0dp</item>
+    <style name="style_ll_main_fg_cursor">
         <item name="android:layout_height">10dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
