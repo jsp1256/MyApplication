@@ -1,4 +1,4 @@
-package com.example.myapplication.Fragment;
+package com.example.myapplication.Maps;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -127,22 +127,6 @@ public class PerimeterFragment extends Fragment {
         aMap.setMyLocationStyle(myLocationStyle);
     }
 
-    /**
-     * 自定义PoiOverlay
-     *
-     */
-/*
-    private class myPoiOverlay {
-        private AMap mamap;
-        private List<PoiItem> mPois;
-        private ArrayList<Marker> mPoiMarks = new ArrayList<Marker>();
-
-        public myPoiOverlay(AMap amap, List<PoiItem> pois) {
-            mamap = amap;
-            mPois = pois;
-        }
-    }
-        */
     @Override
     public void onDestroy() {
         super.onDestroy();
