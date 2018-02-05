@@ -5,13 +5,13 @@ android {
         config {
             keyAlias 'key0'
             keyPassword '123456'
-            storeFile file('D:/Fooder/Test.jks')
+            storeFile file('Test.jks')
             storePassword '123456'
         }
     }
 
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdkVersion 16
