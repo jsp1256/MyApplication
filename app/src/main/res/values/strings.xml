@@ -2,13 +2,49 @@
     <string name="app_name">吃货App</string>
     <string name="hello_world">Hello World,This is my first App</string>
 
+    <!--主模块-->
     <string name="homepage">首页</string>
     <string name="perimeter">周边</string>
+    <string name="mine">我的</string>
+
+    <!--注册界面-->
+    <string name="user_name">用户名</string>
+    <string name="user_name_hint">您的账户名和登录名</string>
+    <string name="password">密码</string>
+    <string name="password_hint">密码提示</string>
+    <string name="password_confirm">密码确认</string>
+    <string name="password_confirm_hint">密码确认提示</string>
+    <string name="phone_num">手机号码</string>
+    <string name="phone_num_hint">手机号码提示</string>
+    <string name="sex">性别</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="register">注册</string>
+
+
     <string name="shop">店铺</string>
     <string name="user">用户</string>
 
     <string name="notifyTitle">提示</string>
     <string name="notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
-    <string name="setting">设置</string>
+    <!-- <string name="setting">设置</string> -->
     <string name="cancel">取消</string>
+
+    <!--首页界面-->
+    <string name="location_input_hint">输入地址</string>
+    <string name="food_input_hint">输入美食名称</string>
+    <string name="drink">饮料</string>
+    <string name="main_fg_food_ranking_list">美食榜</string>
+    <string name="main_fg_store_ranking_list">店铺榜</string>
+    <string name="main_fg_present_recommend">今日推荐</string>
+
+    <!--我的界面-->
+    <string name="user_nickname">一叶知秋</string>
+    <string name="mine_collection">我的收藏</string>
+    <string name="food_album">美食相册</string>
+    <string name="mine_date">我的团约</string>
+    <string name="mine_record">我的记录</string>
+    <string name="setting">设置</string>
+    <string name="exit_login">退出登录</string>
+
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" 
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -8,137 +8,269 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="30dp">
+
         <LinearLayout
-            android:id="@+id/location"
+            android:id="@+id/ll_main_fg_location_search"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
-            android:paddingLeft="5dp"
-            android:clickable="true">
-        <TextView
-            android:id="@+id/Location"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:singleLine="true"
-            android:ellipsize="end"/>
+            android:clickable="true"
+            android:paddingLeft="5dp">
+
+            <TextView
+                android:id="@+id/tv_main_fg_location_search"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
             <View
                 android:layout_width="5dp"
-                android:layout_height="35dp"/>
-        <ImageView
-            android:layout_width="10dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/choise"/>
+                android:layout_height="35dp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/choise" />
         </LinearLayout>
+
         <LinearLayout
-            android:id="@+id/food_search"
+            android:id="@+id/ll_main_fg_food_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:clickable="true"
-            android:background="@drawable/bg_search">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@mipmap/search_icon"/>
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:gravity="center_vertical"
-            android:paddingBottom="5dp"
-            android:background="@null"
-            android:textSize="18sp"
-            android:textColorHint="@color/silver"
-            android:hint=" 搜索美食"/>
+            android:background="@drawable/bg_search"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/search_icon" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/food_input_hint"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/silver"
+                android:textSize="18sp" />
         </LinearLayout>
     </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-    <View
-        android:id="@+id/div_1"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/powderblue"/>
-    <LinearLayout
-        android:id="@+id/homepage_ly_1"
-        android:layout_width="match_parent"
-        android:layout_height="70dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="小吃"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="火锅"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="烧烤"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="夜宵"/>
-    </LinearLayout>
-    <View
-        android:id="@+id/div_2"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/foodcommend"
-                android:drawableTop="@mipmap/ic_launcher"
-                style="@style/homepage"
-                android:text="美食榜"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/fl_main_fg_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/homepage_cursor_bg">
+
+                    <LinearLayout
+                        style="@style/style_ll_main_fg_cursor">
+
+                        <View
+                            android:id="@+id/v_main_fg_cursor1"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/dot_focused" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/style_ll_main_fg_cursor">
+
+                        <View
+                            android:id="@+id/v_main_fg_cursor2"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/dot_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/style_ll_main_fg_cursor">
+
+                        <View
+                            android:id="@+id/v_main_fg_cursor3"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/dot_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/style_ll_main_fg_cursor">
+
+                        <View
+                            android:id="@+id/v_main_fg_cursor4"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/dot_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/style_ll_main_fg_cursor">
+
+                        <View
+                            android:id="@+id/v_main_fg_cursor5"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/dot_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
             <View
-                android:layout_width="0.1dp"
-                android:layout_height="50dp"
-                android:background="@color/black"/>
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro" />
+
+            <LinearLayout
+                android:id="@+id/ll_main_fg_recommend1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/drink" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/drink" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/drink" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/drink" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v_main_fg_div1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/ll_main_fg_food_ranking_list"
+                    style="@style/style_ll_main_fg_recommend">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/main_fg_food_ranking_list" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.1dp"
+                    android:layout_height="50dp"
+                    android:background="@color/black" />
+
+                <LinearLayout style="@style/style_ll_main_fg_recommend">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/main_fg_store_ranking_list" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
             <TextView
-                android:id="@+id/homepage_title1"
-                android:drawableTop="@mipmap/ic_launcher"
-                style="@style/homepage"
-                android:text="店铺榜"/>
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/powderblue"
+                android:gravity="center"
+                android:text="@string/main_fg_present_recommend"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_main_fg_present_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
         </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:background="@color/powderblue"
-            android:text="今日推荐"
-            android:textColor="@color/red"
-            android:textSize="18sp"/>
-        <LinearLayout
-            android:id="@+id/foodlist"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        </LinearLayout>
-    </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.myapplication.Maps;
+package com.example.myapplication.Fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import com.example.myapplication.R;
  */
 
 @SuppressWarnings("DefaultFileTemplate")
-public class PerimeterFragment extends Fragment {
+public class Fragment_perimeter extends Fragment {
     private AMap aMap = null;
     private MapView mapView = null;
 /*
@@ -88,7 +88,7 @@ public class PerimeterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.perimeter_fragment_main_layout, container, false);
 
-        mapView = view.findViewById(R.id.map);
+        mapView = view.findViewById(R.id.fg_perimeter_map);
         mapView.onCreate(savedInstanceState);
 
         initAmap();
@@ -127,6 +127,22 @@ public class PerimeterFragment extends Fragment {
         aMap.setMyLocationStyle(myLocationStyle);
     }
 
+    /**
+     * 自定义PoiOverlay
+     *
+     */
+/*
+    private class myPoiOverlay {
+        private AMap mamap;
+        private List<PoiItem> mPois;
+        private ArrayList<Marker> mPoiMarks = new ArrayList<Marker>();
+
+        public myPoiOverlay(AMap amap, List<PoiItem> pois) {
+            mamap = amap;
+            mPois = pois;
+        }
+    }
+        */
     @Override
     public void onDestroy() {
         super.onDestroy();
