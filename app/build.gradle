@@ -5,13 +5,21 @@ android {
         config {
             keyAlias 'key0'
             keyPassword '123456'
+<<<<<<< HEAD
             storeFile file('D:/Android-ide/key/Test.jks')
+=======
+            storeFile file('Test.jks')
+>>>>>>> pr/2
             storePassword '123456'
         }
     }
 
     compileSdkVersion 26
+<<<<<<< HEAD
     buildToolsVersion '26.0.2'
+=======
+    buildToolsVersion "26.0.2"
+>>>>>>> pr/2
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdkVersion 16
